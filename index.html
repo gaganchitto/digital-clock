@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        /* background-color: yellow; */
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        flex-direction: row;
+        /* z-index: -1; */
+    }
+    
+    .container1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 63px;
+        z-index: -1;
+    }
+    
+    .box {
+        background-color: white;
+        width: 38px;
+        height: 38px;
+        margin: 10px;
+        border: 2px solid black;
+    }
+    
+    .box1 {
+        width: 38px;
+        height: 38px;
+        margin: 10px;
+    }
+    
+    p {
+        width: 35px;
+        margin: 7px;
+        height: 35px;
+        color: red;
+        font-weight: bolder;
+    }
+    
+    h2 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+</style>
+
+<body>
+    <div align="center">
+        <h2>DIGITAL CLOCK</h2>
+    </div>
+    <div class="container1">
+        <div class="box1">
+            <h3>Hr.</h3>
+        </div>
+        <div class="box1">
+            <h3>Min.</h3>
+        </div>
+        <div class="box1">
+            <h3>Sec.</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <p id="hr"></p>
+        </div><span>:</span>
+        <div class="box">
+            <p id="min"></p>
+        </div><span>:</span>
+        <div class="box">
+            <p id="sec"></p>
+        </div>
+    </div>
+</body>
+<script>
+    function clock() {
+        let time = new Date();
+        let hr = time.getHours();
+        let min = time.getMinutes();
+        let sec = time.getSeconds();
+        document.getElementById("hr").innerHTML = hr;
+        document.getElementById("min").innerHTML = min;
+        document.getElementById("sec").innerHTML = sec;
+    }
+    setInterval(clock, 1000)
+</script>
+
+</html>
